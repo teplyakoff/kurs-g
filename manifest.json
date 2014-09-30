@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+
+    "name": "Currency Rate",
+    "description": "Show currency rate",
+    "version": "1.0",
+
+    "permissions": [
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    }
+}
