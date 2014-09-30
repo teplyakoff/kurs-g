@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
 
-    "name": "Currency Rate",
-    "description": "Show currency rate",
+    "name": "Курс Г",
+    "description": "Курс валют с http://kurs.com.ua/",
     "version": "1.0",
 
     "permissions": [
