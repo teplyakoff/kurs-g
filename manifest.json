@@ -2,8 +2,8 @@
     "manifest_version": 2,
 
     "name": "Курс Г",
-    "description": "Курс валют с http://kurs.com.ua/",
-    "version": "1.0",
+    "description": "Курс гривни",
+    "version": "1.1",
 
     "permissions": [
     ],
