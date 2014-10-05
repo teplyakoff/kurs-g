@@ -20,10 +20,12 @@ define(['jquery'], function($) {
         + rnd + '" width="' + this.width + '" height="' + this.height
         + '" frameborder="0" vspace="0" scrolling="no" hspace="0"></ifr' + 'ame>';
       var container = document.getElementById(this.getContainerId());
-      container.parentNode.innerHTML = iframe;
+      container.innerHTML = iframe;
 
       if (onLoadCallback) {
-        $(container).ready(onLoadCallback);
+        $(container).find('iframe').on('load', function() {
+          onLoadCallback(this);
+        });
       }
     }
   };

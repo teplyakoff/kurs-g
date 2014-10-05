@@ -9,7 +9,7 @@ define(['jquery'], function ($) {
       $container.append(loaderHtml);
       $appendTo.append($container);
 
-      var $draft = $('<div>');
+      var $draft = $('<div class="hidden">');
       $draft.html(source.getHtml());
       $appendTo.append($draft);
       source.run(function() {
