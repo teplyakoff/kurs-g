@@ -1,3 +1,7 @@
+???
+    - You can select currencies
+    - Switching between sources
+    - TODO: Bug with kurs.com.ua when reopening with more than one currency
 1.1
     - Add http://minfin.com.ua/ source
 1.0

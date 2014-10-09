@@ -1,9 +1,12 @@
 define(['jquery'], function($) {
   return {
-    width: 220,
+    width: 320,
     height: 203,
+    setCurrency: function(currency) {
+      this.currency = currency;
+    },
     getContainerId: function () {
-      return 'kurs-com-ua-informer-mezhbank-' + this.width + 'x' + this.height + '-usd-green-container';
+      return 'kurs-com-ua-informer-mezhbank-' + this.width + 'x' + this.height + '-' + this.currency + '-green-container';
     },
     getHtml: function () {
       return "<!--Kurs.com.ua mezhbank " + this.width + 'x' + this.height + " usd green--> \
@@ -15,16 +18,17 @@ define(['jquery'], function($) {
         <!--//Kurs.com.ua mezhbank " + this.width + 'x' + this.height + "usd green-->";
     },
     run: function (onLoadCallback) {
+      var self = this;
       var rnd = +new Date;
-      var iframe = '<ifr' + 'ame src="http://kurs.com.ua/informer/mezhbank/usd?color=green&rnd='
+      var iframe = '<ifr' + 'ame src="http://kurs.com.ua/informer/mezhbank/' + this.currency + '?color=green&rnd='
         + rnd + '" width="' + this.width + '" height="' + this.height
         + '" frameborder="0" vspace="0" scrolling="no" hspace="0"></ifr' + 'ame>';
-      var container = document.getElementById(this.getContainerId());
-      container.innerHTML = iframe;
+      var $container = $('#' + this.getContainerId());
+      $container.html(iframe);
 
       if (onLoadCallback) {
-        $(container).find('iframe').on('load', function() {
-          onLoadCallback(this);
+        $container.find('iframe').on('load', function() {
+          onLoadCallback(self);
         });
       }
     }
