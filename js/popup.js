@@ -18,6 +18,17 @@ require(['jquery', 'config', 'loader'], function($, config, loader) {
 
         loader.load();
 
+        $('#currency').find('a').each(function() {
+          var cur = $(this).data('value');
+          if (currencies[cur]) {
+            $(this).addClass('selected');
+          } else {
+            $(this).removeClass('selected');
+          }
+        });
+
+        $('#source').val(source);
+
         $('#currency').find('a').click(function () {
           var selectedCurrency = $(this).data('value');
 
@@ -36,11 +47,9 @@ require(['jquery', 'config', 'loader'], function($, config, loader) {
         });
 
         $('#source').change(function () {
-          $('#currency').find('a').removeClass('selected');
-          $('#currency').find('[data-value="usd"]').addClass('selected');
           var source = $(this).val();
 
-          config.set({currencies: config.defaults.currencies, source: source}, function() {
+          config.set({source: source}, function() {
             loader.clear();
             loader.load();
           });

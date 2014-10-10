@@ -14,41 +14,39 @@ define(['jquery', 'config'], function ($, config) {
         var currencies = items.currencies;
 
         require(['source/' + sourceName], function (source) {
-          for (var currency in currencies) {
-            var enabled = currencies[currency];
+          ['usd', 'eur', 'rub'].forEach(function(currency) {
             var declaration = sourceName + '-' + currency;
-            var $el = $('[data-source="' + declaration + '"');
+            var $el = $('[data-source="' + declaration + '"]');
 
-            if (!enabled) {
+            if (!currencies[currency]) {
               $el.remove();
-              continue;
+            } else {
+              if (!$el.length) {
+                source.setCurrency(currency);
+
+                var $item = $('<div data-source="' + declaration + '">')
+                  .append($('<div>')
+                    .width(source.width)
+                    .height(source.height)
+                    .append(
+                    self.$preloader.html()
+                  )
+                );
+
+                self.$container.append($item);
+
+                var $draft = $('<div class="hidden">')
+                  .html(source.getHtml());
+
+                self.$container.append($draft);
+
+                source.run(function () {
+                  $item.html($draft.html());
+                  $draft.remove();
+                });
+              }
             }
-
-            if (!$el.length) {
-              source.setCurrency(currency);
-
-              var $item = $('<div data-source="' + declaration + '">')
-                .append($('<div>')
-                  .width(source.width)
-                  .height(source.height)
-                  .append(
-                  self.$preloader.html()
-                )
-              );
-
-              self.$container.append($item);
-
-              var $draft = $('<div class="hidden">')
-                .html(source.getHtml());
-
-              self.$container.append($draft);
-
-              source.run(function () {
-                $item.html($draft.html());
-                $draft.remove();
-              });
-            }
-          }
+          });
         });
       });
     },
