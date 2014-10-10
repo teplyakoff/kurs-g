@@ -3,7 +3,7 @@
 
     "name": "Курс Г",
     "description": "Курс гривни",
-    "version": "1.2",
+    "version": "1.2.1",
 
     "permissions": [
       "storage"
