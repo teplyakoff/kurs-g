@@ -4,10 +4,18 @@ module.exports = function(grunt) {
 
     jsonlint: {
       src: ['package.json', 'manifest.json']
+    },
+
+    csslint: {
+      options: {
+        ids: false
+      },
+      src: 'css/**/*.css'
     }
   });
 
   grunt.loadNpmTasks('grunt-jsonlint');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
 
-  grunt.registerTask('default', ['jsonlint']);
+  grunt.registerTask('default', ['jsonlint', 'csslint']);
 };
