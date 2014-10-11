@@ -14,6 +14,7 @@
   "homepage": "https://github.com/teplyakoff/kurs-g",
   "devDependencies": {
     "grunt": "0.4.5",
-    "grunt-jsonlint": "^1.0.4"
+    "grunt-bumpup": "0.6.1",
+    "grunt-jsonlint": "1.0.4"
   }
 }
