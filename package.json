@@ -1,0 +1,21 @@
+{
+  "name": "kurs-g",
+  "version": "1.2.1",
+  "description": "Interbank currency rates",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teplyakoff/kurs-g.git"
+  },
+  "author": "Dmitry Teplyakov",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/teplyakoff/kurs-g/issues"
+  },
+  "homepage": "https://github.com/teplyakoff/kurs-g",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-bumpup": "0.6.1",
+    "grunt-jsonlint": "1.0.4",
+    "grunt-zip": "0.16.0"
+  }
+}
