@@ -5,22 +5,33 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jsonlint: {
-      src: ['package.json', 'manifest.json']
+      src: ['package.json', 'src/manifest.json']
     },
 
     csslint: {
       options: {
         ids: false
       },
-      src: 'css/**/*.css'
+      src: 'src/css/**/*.css'
     },
 
-    bumpup: ['package.json', 'manifest.json']
+    bumpup: ['package.json', 'src/manifest.json'],
+
+    zip: {
+      chrome: {
+        cwd: 'src',
+        src: ['src/**/*'],
+        dest: 'build/chrome.zip'
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-jsonlint');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-bumpup');
+  grunt.loadNpmTasks('grunt-zip');
 
   grunt.registerTask('default', ['jsonlint', 'csslint']);
+
+  grunt.registerTask('build', ['jsonlint', 'csslint', 'zip:chrome']);
 };
