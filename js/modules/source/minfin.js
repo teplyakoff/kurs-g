@@ -12,7 +12,7 @@ define({
     var pic = Math.round(rand_no * 10000000);
     var informer_usd = document.getElementById('minfincomua_i_' + this.currency);
 
-    informer_usd.innerHTML = '<a target="_blank" href="http://minfin.com.ua/currency/">'
+    informer_usd.innerHTML = '<a target="_blank" href="http://minfin.com.ua/currency/mb/' + this.currency + '">'
       + '<img src="http://informer.minfin.com.ua/interbank/img/' + this.currency
       + '.png?' + pic
       + '" width="' + this.width
