@@ -16,7 +16,7 @@
   font-weight: bold;
 }
 
-#currency a.selected {
+#currency .selected {
   color: mediumslateblue;
 }
 
