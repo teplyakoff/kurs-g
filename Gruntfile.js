@@ -15,23 +15,53 @@ module.exports = function(grunt) {
       src: 'src/css/**/*.css'
     },
 
-    bumpup: ['package.json', 'src/manifest.json'],
+    bumpup: {
+      options: {
+        updateProps: {
+          pkg: 'package.json'
+        }
+      },
+      files: ['package.json', 'src/manifest.json']
+    },
 
-    zip: {
+    compress: {
       chrome: {
-        cwd: 'src',
-        src: ['src/**/*'],
-        dest: 'build/chrome.zip'
+        options: {
+          archive: function() {
+            return 'build/chrome-' + grunt.config.get('pkg').version + '.zip';
+          },
+          mode: 'zip'
+        },
+        files: [
+          { cwd: 'src/', src: '**/*', expand: true }
+        ]
+      }
+    },
+
+    shell: {
+      'release-start': {
+          command: function () {
+            return 'git checkout -b release-' + grunt.config.get('pkg').version + ' devel';
+        }
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-jsonlint');
   grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-bumpup');
-  grunt.loadNpmTasks('grunt-zip');
+  grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['jsonlint', 'csslint']);
+  grunt.registerTask('default', 'lint');
 
-  grunt.registerTask('build', ['jsonlint', 'csslint', 'zip:chrome']);
+  grunt.registerTask('lint', ['jsonlint', 'csslint']);
+
+  grunt.registerTask('build', ['lint', 'compress:chrome']);
+
+  grunt.registerTask('release:start', function(type) {
+    type = type || 'patch';
+    grunt.registerTask('release:go', ['lint', 'bumpup:' + type, 'shell:release-start']);
+    grunt.task.run('release:go');
+  });
 };
