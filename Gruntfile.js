@@ -33,7 +33,14 @@ module.exports = function(grunt) {
           mode: 'zip'
         },
         files: [
-          { cwd: 'src/', src: '**/*', expand: true }
+          {
+            cwd: 'src/', expand: true, src: [
+              '**/*',
+              '!js/vendor/**/*',
+              'js/vendor/requirejs/require.js',
+              'js/vendor/jquery/dist/jquery.min.js'
+            ]
+          }
         ]
       }
     },
