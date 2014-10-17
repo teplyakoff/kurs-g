@@ -1,4 +1,4 @@
-define(['jquery', 'config'], function ($, config) {
+define(['config', 'jquery'], function (config) {
   return {
     setPreloader: function($preloader) {
       this.$preloader = $preloader;
@@ -13,7 +13,7 @@ define(['jquery', 'config'], function ($, config) {
         var sourceName = items.source;
         var currencies = items.currencies;
 
-        require(['source/' + sourceName], function (source) {
+        require(['source/' + sourceName + '/informer'], function (source) {
           ['usd', 'eur', 'rub'].forEach(function(currency) {
             var declaration = sourceName + '-' + currency;
             var $el = $('[data-source="' + declaration + '"]');

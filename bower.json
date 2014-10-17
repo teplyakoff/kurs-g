@@ -15,6 +15,9 @@
   ],
   "devDependencies": {
     "jquery": "2.1.1",
-    "requirejs": "2.1.15"
+    "requirejs": "2.1.15",
+    "requirejs-text": "2.0.12",
+    "requirejs-underscore-tpl": "*",
+    "underscore": "1.7.0"
   }
 }

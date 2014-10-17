@@ -1,4 +1,4 @@
-require(['jquery', 'config', 'loader'], function($, config, loader) {
+require(['config', 'loader', 'jquery'], function(config, loader) {
   config.setDefaults({
     source: 'kurs',
     currencies: {
