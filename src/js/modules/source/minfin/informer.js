@@ -1,4 +1,4 @@
-define(['tpl!source/minfin/template.html', 'underscore'], function (mainTpl) {
+define(['tpl!source/minfin/template.tpl', 'underscore'], function (mainTpl) {
   return {
     width: 220,
     height: 175,

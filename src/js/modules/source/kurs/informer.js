@@ -1,6 +1,6 @@
 define([
-  'tpl!source/kurs/template.html',
-  'tpl!source/kurs/iframe.html',
+  'tpl!source/kurs/template.tpl',
+  'tpl!source/kurs/iframe.tpl',
   'underscore',
   'jquery'
 ], function(mainTpl, iframeTpl) {
