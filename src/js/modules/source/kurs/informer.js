@@ -1,10 +1,9 @@
 define([
-  'text!source/kurs/template.html',
-  'text!source/kurs/iframe.html',
+  'tpl!source/kurs/template.html',
+  'tpl!source/kurs/iframe.html',
   'underscore',
   'jquery'
-], function(template, iframe) {
-  console.log(iframe);
+], function(mainTpl, iframeTpl) {
   return {
     width: 300,
     height: 203,
@@ -23,7 +22,7 @@ define([
       });
     },
     getHtml: function () {
-      return _.template(template)({
+      return mainTpl({
         id: this.getContainerId(),
         width: this.width,
         height: this.height,
@@ -34,7 +33,7 @@ define([
     run: function (onLoadCallback) {
       var self = this;
 
-      var iframeHtml = _.template(iframe)({
+      var iframeHtml = iframeTpl({
         currency: this.currency,
         color: this.color,
         width: this.width,

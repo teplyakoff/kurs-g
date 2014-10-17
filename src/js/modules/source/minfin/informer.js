@@ -1,4 +1,4 @@
-define(['text!source/minfin/template.html', 'underscore'], function (template) {
+define(['tpl!source/minfin/template.html', 'underscore'], function (mainTpl) {
   return {
     width: 220,
     height: 175,
@@ -6,7 +6,7 @@ define(['text!source/minfin/template.html', 'underscore'], function (template) {
       this.currency = currency;
     },
     getHtml: function () {
-      return _.template(template)({
+      return mainTpl({
         currency: this.currency,
         pic: Math.round(Math.random() * 10000000),
         width: this.width,
