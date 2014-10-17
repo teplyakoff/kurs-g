@@ -1,4 +1,4 @@
-define(['jquery', 'config'], function ($, config) {
+define(['config', 'jquery'], function (config) {
   return {
     setPreloader: function($preloader) {
       this.$preloader = $preloader;

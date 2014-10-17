@@ -1,4 +1,4 @@
-define(['underscore', 'text!source/minfin/template.html'], function (_, template) {
+define(['text!source/minfin/template.html', 'underscore'], function (template) {
   return {
     width: 220,
     height: 175,

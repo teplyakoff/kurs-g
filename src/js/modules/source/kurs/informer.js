@@ -1,9 +1,9 @@
 define([
-  'jquery',
-  'underscore',
   'text!source/kurs/template.html',
-  'text!source/kurs/iframe.html'
-], function($, _, template, iframe) {
+  'text!source/kurs/iframe.html',
+  'underscore',
+  'jquery'
+], function(template, iframe) {
   console.log(iframe);
   return {
     width: 300,
