@@ -1,8 +1,24 @@
 Курс-Г
 ======
 
-Расширение для Chrome.
+Расширение для Chrome. (https://chrome.google.com/webstore/detail/%D0%BA%D1%83%D1%80%D1%81-%D0%B3/iabpjjjmpogblbjlplnbkkgdlcboblpn)
+
 Отображает текущий курс гривны на межбанке
+
+### Установка:
+
+```bash
+# Clone project
+$ git clone git@github.com:teplyakoff/kurs-g.git
+
+# Install node dependencies
+$ node install
+
+# Install js vendors
+$ bower install
+```
+
+После этого можно загрузить распакованный экстеншн (project_path/src)
 
 Источники:
 * http://kurs.com.ua/mejbank
