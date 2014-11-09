@@ -37,8 +37,11 @@ module.exports = function(grunt) {
             cwd: 'src/', expand: true, src: [
               '**/*',
               '!js/vendor/**/*',
+              'js/vendor/jquery/dist/jquery.min.js',
               'js/vendor/requirejs/require.js',
-              'js/vendor/jquery/dist/jquery.min.js'
+              'js/vendor/requirejs-text/text.js',
+              'js/vendor/requirejs-underscore-tpl/underscore-tpl.js',
+              'js/vendor/underscore/underscore-min.js'
             ]
           }
         ]
