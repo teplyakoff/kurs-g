@@ -5,6 +5,21 @@
 
 Отображает текущий курс гривны на межбанке
 
+### Установка:
+
+```bash
+# Clone project
+$ git clone git@github.com:teplyakoff/kurs-g.git
+
+# Install node dependencies
+$ node install
+
+# Install js vendors
+$ bower install
+```
+
+После этого можно загрузить распакованный экстеншн (project_path/src)
+
 Источники:
 * http://kurs.com.ua/mejbank
 * http://minfin.com.ua/currency/mb/
