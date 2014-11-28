@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+* 1.2.4
+ * Update icon for New Year (Thanks to Vladimir Kucher)
+
 * 1.2.2 (2014-10-12)
  * Deploy with grunt
  * Fixed bug with link for minfin
