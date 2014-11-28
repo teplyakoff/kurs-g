@@ -23,8 +23,9 @@
 #config {
   min-width: 230px;
   float: right;
+  width: 100%;
 }
 
 #source {
-  margin: 0 0 4px 8px;
+  margin: -3px 0 4px 8px;
 }
