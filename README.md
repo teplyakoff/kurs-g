@@ -12,7 +12,7 @@
 $ git clone git@github.com:teplyakoff/kurs-g.git
 
 # Install node dependencies
-$ node install
+$ npm install
 
 # Install js vendors
 $ bower install
